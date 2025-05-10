@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - SportLine</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="inicio.html" style="color: white; text-decoration: none;">SportLine</a></div>
+    <nav>
+      <a href="inicio.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section" style="padding: 2rem;">
+      <h2>Fale Conosco</h2>
+      <p>Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+      
+      <form action="https://formsubmit.co/cigaxoj604@neuraxo.com" method="POST" class="contact-form" style="max-width: 600px; margin-top: 2rem;">
+        <input type="hidden" name="_captcha" value="false">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="name" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" />
+      
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" />
+      
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="message" rows="5" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea>
+      
+        <button type="submit">Enviar</button>
+      </form>     
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>SportLine</h3>
+        <p>Conectando você ao melhor do esporte.</p>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="footer-contact">
+        <p>Contato: contato@sportline.com</p>
+        <p>© 2025 SportLine. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

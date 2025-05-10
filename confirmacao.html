@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de Compra - SportLine</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="inicio.html" style="color: white; text-decoration: none;">SportLine</a></div>
+    <nav>
+      <a href="inicio.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="confirmation-page">
+      <h2>Compra Concluída</h2>
+      <div class="confirmation-container">
+        <h3>Obrigado pela sua compra!</h3>
+
+        <div class="order-summary">
+          <ul id="order-items">
+            <!-- Itens do pedido serão inseridos aqui -->
+          </ul>
+          <li><strong>Total:</strong> R$ <span id="order-total"></span></li>
+        </div>
+
+        <div class="order-status">
+          <i class="fa fa-check-circle"></i> Seu pedido foi confirmado!
+        </div>
+
+        <div class="next-steps">
+          <ul>
+            <li>Aguarde a confirmação do pagamento.</li>
+            <li>Em breve, você receberá um e-mail com os detalhes do pedido.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>SportLine</h3>
+        <p>Conectando você ao melhor do esporte.</p>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="footer-contact">
+        <p>Contato: contato@sportline.com</p>
+        <p>© 2025 SportLine. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer> 
+
+  <script>
+    // Recupera os dados do carrinho do localStorage
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    const cartTotal = localStorage.getItem("cartTotal");
+
+    const orderItemsList = document.getElementById("order-items");
+    const orderTotal = document.getElementById("order-total");
+
+    // Se houver itens no carrinho, exibe-os
+    if (cartItems && cartItems.length > 0) {
+      cartItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - R$ ${item.price.toFixed(2)}`;
+        orderItemsList.appendChild(li);
+      });
+    }
+
+    // Exibe o total do pedido
+    if (cartTotal) {
+      orderTotal.textContent = cartTotal;
+    } else {
+      orderTotal.textContent = "0.00"; // Caso não tenha o total, define como 0
+    }
+
+    // Caso não haja itens, exibe uma mensagem
+    if (!cartItems || cartItems.length === 0) {
+      orderItemsList.innerHTML = "<li>Seu carrinho está vazio.</li>";
+      orderTotal.textContent = "0.00";
+    }
+  </script>
+
+</body>
+</html>

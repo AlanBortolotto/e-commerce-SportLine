@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="inicio.html" style="color: white; text-decoration: none;">SportLine</a></div>
+    <nav>
+      <a href="inicio.html">Início</a>  <!-- Alterado para apontar para inicio.html -->
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+  </header>
+
+  <main>
+    <section class="products">
+      <div class="product">
+        <img src="img/tenis.jpg" alt="Tênis de Corrida" />
+        <h3>Tênis de Corrida</h3>
+        <p>R$ 299,90</p>
+        <button onclick="addToCart('Tênis de Corrida', 299.90)">Comprar</button>
+      </div>
+      <div class="product">
+        <img src="img/camiseta.jpg" alt="Camiseta Esportiva" />
+        <h3>Camiseta Esportiva</h3>
+        <p>R$ 89,90</p>
+        <button onclick="addToCart('Camiseta Esportiva', 89.90)">Comprar</button>
+      </div>
+      <div class="product">
+        <img src="img/bola.jpg" alt="Bola de Futebol" />
+        <h3>Bola de Futebol</h3>
+        <p>R$ 119,90</p>
+        <button onclick="addToCart('Bola de Futebol', 119.90)">Comprar</button>
+      </div>
+      <div class="product">
+        <img src="img/luvas.jpg" alt="Luva Esportiva" />
+        <h3>Luva Esportiva</h3>
+        <p>R$ 59,90</p>
+        <button onclick="addToCart('Luva Esportiva', 59.90)">Comprar</button>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart" id="cart">
+    <h2>Carrinho</h2>
+    <div id="cart-items"></div>
+    <p>Total: R$ <span id="cart-total">0.00</span></p>
+    <button onclick="finalizePurchase()">Finalizar Compra</button>
+  </aside>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>SportLine</h3>
+        <p>Conectando você ao melhor do esporte.</p>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="footer-contact">
+        <p>Contato: contato@sportline.com</p>
+        <p>© 2025 SportLine. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>  
+
+  <script src="script.js"></script>
+
+</body>
+</html>
